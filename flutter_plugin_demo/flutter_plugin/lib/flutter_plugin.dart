@@ -19,4 +19,12 @@ class FlutterPlugin {
   static Future<void> showToast(String content)async {
     await _channel.invokeMethod("toast",content);
   }
+
+
+  /**
+   * 安装Apk
+   */
+  static Future<bool> installApk(String path) async{
+    return await _channel.invokeMethod("installApk",path);
+  }
 }
